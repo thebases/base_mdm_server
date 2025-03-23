@@ -33,6 +33,8 @@
     <Parameter name="aapt.command" value="${aapt.command}"/>
 
     <Parameter name="log4j.config" value="${log4j.config}"/>
+    <Parameter name="log.file.main" value="${log.file.main}"/>
+    <Parameter name="log.file.audit" value="${log.file.audit}"/>
 
     <Parameter name="plugin.photo.enable.places" value="${plugin.photo.enable.places}"/>
 
@@ -42,6 +44,8 @@
     If an external MQTT server is used, this is the address of this MQTT server
     -->
     <Parameter name="mqtt.server.uri" value="${mqtt.server.uri}"/>
+    <Parameter name="mqtt.admin.username" value="${mqtt.admin.username}"/>
+    <Parameter name="mqtt.admin.password" value="${mqtt.admin.password}"/>
 
     <!-- Fast device search by last characters, here's the length -->
     <Parameter name="device.fast.search.chars" value="${device.fast.search.chars}"/>
@@ -55,10 +59,12 @@
     <!-- Optional tag for MQTT authentication for more security 
          (supported by Headwind MDM launcher v5.05 and above) -->
     <Parameter name="mqtt.auth" value="${mqtt.auth}"/>
+    <Parameter name="mqtt.ssl" value="${mqtt.ssl}"/>
 
     <!-- Optional tag for delaying MQTT messages in milliseconds
      to avoid congestion when all devices are updating configuration at the same time -->
     <Parameter name="mqtt.message.delay" value="${mqtt.message.delay}"/>
+    <Parameter name="mqtt.message.qos" value="${mqtt.message.qos}"/>
 
     <!-- Display X-Forwarded-For instead of source IP -->
     <Parameter name="plugin.audit.display.forwarded.ip" value="${plugin.audit.display.forwarded.ip}"/>
@@ -72,7 +78,8 @@
     <Parameter name="smtp.password" value="${smtp.password}"/>
     <Parameter name="smtp.from" value="${smtp.from}"/>
 
-    <Parameter name="sql.init.script.path" value="${sql.init.script.path}"/>
+    <!-- If you need to run custom script uncomment this and add this value in build.properties file -->
+<!--    <Parameter name="sql.init.script.path" value="${sql.init.script.path}"/>-->
 
     <!-- If you have any reverse proxies, specify them here (IP addresses,
     comma-separated) for correct logging of IP addresses -->

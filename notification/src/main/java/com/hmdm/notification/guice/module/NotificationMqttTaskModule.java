@@ -29,6 +29,7 @@ public class NotificationMqttTaskModule {
     public static final String MQTT_USERNAME = "hmdm";
     public static final String MQTT_ADMIN_USERNAME = "admin";
 
+
     @Inject
     public NotificationMqttTaskModule(@Named("mqtt.server.uri") String serverUri,
                                       @Named("mqtt.external") String mqttExternal,
@@ -48,9 +49,12 @@ public class NotificationMqttTaskModule {
      * <p>Creates the broker service</p>
      */
     public void init() {
-        if (!initBrokerService()) {
+        boolean ret = initBrokerService();
+        if (!ret) {
+            log.info("initBrokerService: ",ret);
             return;
         }
+        log.info("========== Init NotificationMqttTaskModule ========== ");
         pushSender.init();
     }
 

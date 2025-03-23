@@ -10,6 +10,8 @@ import com.hmdm.persistence.DeviceDAO;
 import com.hmdm.persistence.domain.Configuration;
 import com.hmdm.persistence.domain.Device;
 import org.mybatis.guice.transactional.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class PushService {
     private final PushSender pushSenderPolling;
     private final ConfigurationDAO configurationDAO;
     private final DeviceDAO deviceDAO;
+    private Logger logger = LoggerFactory.getLogger(BasePushSender.class);
 
     @Inject
     public PushService(@Named("MQTT") PushSender pushSenderMqtt, @Named("Polling") PushSender pushSenderPolling,
@@ -32,6 +35,7 @@ public class PushService {
 
     // Use both ways to send a message, because the decision how to receive messages is done on the device (configuration)
     public int send(PushMessage message) {
+        logger.info("========== Send Func - PushService ==========");
         pushSenderMqtt.send(message);
         return pushSenderPolling.send(message);
     }

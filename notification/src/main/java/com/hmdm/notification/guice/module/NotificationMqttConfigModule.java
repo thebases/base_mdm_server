@@ -49,11 +49,23 @@ public class NotificationMqttConfigModule extends AbstractModule {
                 mqttAuthTag != null && (mqttAuthTag.equals("1") || mqttAuthTag.equalsIgnoreCase("true"))
         );
 
+        String mqttSslTag = this.context.getInitParameter("mqtt.ssl");
+        this.bindConstant().annotatedWith(Names.named("mqtt.ssl")).to(
+                mqttSslTag != null && (mqttSslTag.equals("1") || mqttSslTag.equalsIgnoreCase("true"))
+        );
+
+
         String mqttAdminPassword = context.getInitParameter("mqtt.admin.password");
         if (mqttAdminPassword == null) {
-            mqttAdminPassword = "dd3V5YDkrX";
+            mqttAdminPassword = "12345678";
         }
         this.bindConstant().annotatedWith(Names.named("mqtt.admin.password")).to(mqttAdminPassword);
+
+        String mqttAdminUsername = context.getInitParameter("mqtt.admin.username");
+        if (mqttAdminUsername == null) {
+            mqttAdminUsername = "base";
+        }
+        this.bindConstant().annotatedWith(Names.named("mqtt.admin.username")).to(mqttAdminUsername);
 
         String mqttDelayTag = this.context.getInitParameter("mqtt.message.delay");
         long mqttDelay = 0;

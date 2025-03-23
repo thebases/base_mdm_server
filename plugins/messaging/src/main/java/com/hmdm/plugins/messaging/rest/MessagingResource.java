@@ -147,6 +147,7 @@ public class MessagingResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response sendMessage(SendRequest sendRequest) {
+        logger.info("Sending message: {}", sendRequest);
         try {
             final boolean canSendMessages = SecurityContext.get().hasPermission("plugin_messaging_send");
 
