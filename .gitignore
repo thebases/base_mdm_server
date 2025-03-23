@@ -1,5 +1,7 @@
 # maven target dir
 target
+mdm-folder/
+
 
 # idea 
 *.iml
