@@ -10,8 +10,8 @@ DEFAULT_SQL_PORT=5432
 DEFAULT_SQL_BASE=hmdm
 DEFAULT_SQL_USER=hmdm
 DEFAULT_SQL_PASS=
-DEFAULT_LOCATION="/opt/hmdm"
-DEFAULT_SCRIPT_LOCATION="/opt/hmdm"
+DEFAULT_LOCATION="/opt/base-mdm"
+DEFAULT_SCRIPT_LOCATION="/opt/base-mdm"
 TOMCAT_HOME=$(ls -d /var/lib/tomcat* | tail -n1)
 TOMCAT_SERVICE=$(echo $TOMCAT_HOME | awk '{n=split($1,A,"/"); print A[n]}')
 TOMCAT_ENGINE="Catalina"

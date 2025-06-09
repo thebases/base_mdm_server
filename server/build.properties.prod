@@ -1,17 +1,17 @@
 # This is a sample file; copy this file to build.properties
 
 # database settings
-jdbc.url=jdbc:postgresql://localhost:5432/hmdm
+jdbc.url=jdbc:postgresql://localhost:5432/base_mdm
 jdbc.driver=org.postgresql.Driver
-jdbc.username=anhjean
-jdbc.password=Anhnh7383@
+jdbc.username=basedb
+jdbc.password=theBase15112023@
 sql.init.script.path=C:/Github/hmdm-server/server/init_script.sql
 
 # A path to a base app directory to store internal data
-base.directory=C:/Github/hmdm-server/server
+base.directory=/opt/base-mdm/server
 
 # A path to a directory to store uploaded files
-files.directory=C:/Github/hmdm-server/server/base/files
+files.directory=/opt/base-mdm/server/base/files
 
 # A base URL for deployment of this build
 base.url=http://localhost:9090
@@ -27,14 +27,14 @@ secure.enrollment=0
 
 # A hash secret used for validating the device IDs provided by requests
 # from devices
-hash.secret=changeme-C3z9vi54
+hash.secret=068bd957181f91076e962a61c8788487
 
 # An ID of a record in userroles DB table representing an ORG_ADMIN role
 # Do not change this!
 role.orgadmin.id=2
 
 # A path to a root directory for storing plugin files
-plugins.files.directory=C:/Github/hmdm-server/server/base/plugins
+plugins.files.directory=/opt/base-mdm/server/base/plugins
 
 # A path to a file to be created by the application initializer to signal on initialization completion
 initialization.completion.signal.file=C:/Github/hmdm-server/server/base/initialized.txt
@@ -43,9 +43,9 @@ initialization.completion.signal.file=C:/Github/hmdm-server/server/base/initiali
 aapt.command=aapt
 
 # An URL for the file with configuration for loggers
-log4j.config=file:///C:/Github/hmdm-server/server/log4j-hmdm.xml
-log.file.main=C:/Github/hmdm-server/server/logs/hmdm.log
-log.file.audit=C:/Github/hmdm-server/server/logs/audit.log
+log4j.config=file:////opt/base-mdm/server/log4j-hmdm.xml
+log.file.main=/opt/base-mdm/server/logs/hmdm.log
+log.file.audit=/opt/base-mdm/server/logs/audit.log
 
 # The parameters specific to Device Log plugin
 plugin.devicelog.persistence.config.class=com.hmdm.plugins.devicelog.persistence.postgres.DeviceLogPostgresPersistenceConfiguration

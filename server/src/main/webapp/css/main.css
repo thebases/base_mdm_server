@@ -85,7 +85,7 @@
 
 .header {
     height: 50px;
-    background-color: #7a9ab9;
+    background-color: #ffffff;
 }
 
 .navbar-nav .expiry-warning {
@@ -104,7 +104,7 @@
 
 .login-logo .logo {
     font-size: 30px;
-    color: #4c788c;
+    color: #000000;
 }
 
 .login-footer {
@@ -112,7 +112,7 @@
     bottom: 10px;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #cccccc;
+    border-top: 1px solid #ffffff;
     padding-top: 10px;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .header .open a, .header .open .dropdown-menu {
-    background-color: #7a9ab9 !important;
+    background-color: #ffffff !important;
 }
 
 .header .open .dropdown-menu {

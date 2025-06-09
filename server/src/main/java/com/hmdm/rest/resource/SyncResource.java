@@ -468,6 +468,8 @@ public class SyncResource {
             data.setNewNumber(dbDevice.getNumber());
         }
 
+        // The Base customized here
+
         SyncResponseInt syncResponse = data;
 
         SecurityContext.init(dbDevice.getCustomerId());
