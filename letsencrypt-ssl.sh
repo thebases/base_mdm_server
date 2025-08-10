@@ -1,9 +1,9 @@
 #!/bin/bash
 # 
-# LetsEncrypt renewal script for Headwind MDM
+# LetsEncrypt renewal script for Base MDM
 #
 
-# Set this parameter to 1 if you're redirecting port 80 to 8080 to be able to run Headwind MDM on port 80
+# Set this parameter to 1 if you're redirecting port 80 to 8080 to be able to run Base MDM on port 80
 HTTP_REDIRECT=0
 DOMAIN=your-domain.com
 TOMCAT_HOME=$(ls -d /var/lib/tomcat* | tail -n1)

@@ -62,7 +62,7 @@ mqtt.admin.password=12345678
 mqtt.client.tag=ATOM-MDM
 
 
-# MQTT authentication for more security (supported by Headwind MDM launcher v5.05 and above)
+# MQTT authentication for more security (supported by Base MDM launcher v5.05 and above)
 mqtt.auth=true
 mqtt.ssl=true
 

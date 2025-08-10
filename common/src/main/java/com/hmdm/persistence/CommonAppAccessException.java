@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)

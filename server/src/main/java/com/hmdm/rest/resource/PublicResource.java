@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -86,6 +86,7 @@ public class PublicResource {
 
     private String appName;
     private String appLogo;
+    private Boolean appLogoOnly;
     private String appVendorName;
     private String appVendorLink;
     private String appSignupLink;
@@ -105,6 +106,7 @@ public class PublicResource {
                           @Named("base.url") String baseUrl,
                           @Named("rebranding.name") String appName,
                           @Named("rebranding.logo") String appLogo,
+                          @Named("rebranding.logoOnly") Boolean appLogoOnly,
                           @Named("rebranding.vendor.name") String appVendorName,
                           @Named("rebranding.vendor.link") String appVendorLink,
                           @Named("rebranding.signup.link") String appSignupLink,
@@ -116,6 +118,7 @@ public class PublicResource {
         this.baseUrl = baseUrl;
         this.appName = appName;
         this.appLogo = appLogo;
+        this.appLogoOnly = appLogoOnly;
         this.appVendorName = appVendorName;
         this.appVendorLink = appVendorLink;
         this.appSignupLink = appSignupLink;
@@ -274,6 +277,7 @@ public class PublicResource {
         NameResponse nameResponse = new NameResponse();
         nameResponse.setAppName(appName);
         nameResponse.setVendorName(appVendorName);
+        nameResponse.setVendorLogoOnly(appLogoOnly);
         nameResponse.setVendorLink(appVendorLink);
         nameResponse.setSignupLink(appSignupLink);
         nameResponse.setTermsLink(appTermsLink);

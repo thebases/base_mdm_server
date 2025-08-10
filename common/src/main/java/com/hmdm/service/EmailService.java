@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -99,7 +99,7 @@ public class EmailService {
         this.smtpPassword = smtpPassword;
         this.smtpFrom = smtpFrom;
         if (appName.equals("")) {
-            appName = "Headwind MDM";
+            appName = "Base MDM";
         }
         this.baseUrl = baseUrl;
         this.appName = appName;

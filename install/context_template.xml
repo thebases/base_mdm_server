@@ -12,7 +12,7 @@
     <!-- This directory is used to store uploaded app files, must be accessible for tomcat user -->
     <Parameter name="files.directory" value="_BASE_DIRECTORY_/files"/>
 
-    <!-- URL used to open Headwind MDM control panel -->
+    <!-- URL used to open Base MDM control panel -->
     <Parameter name="base.url" value="_PROTOCOL_://_BASE_HOST__BASE_PATH_"/>
 
     <!-- private / shared; shared can be used only in Enterprise solution -->
@@ -57,7 +57,7 @@
     <Parameter name="device.fast.search.chars" value="5"/>
 
     <!-- Optional tag for MQTT authentication for more security
-         (supported by Headwind MDM launcher v5.05 and above) -->
+         (supported by Base MDM launcher v5.05 and above) -->
     <Parameter name="mqtt.auth" value="1"/>
 
     <!-- If you have any reverse proxies, specify them here (IP addresses, 

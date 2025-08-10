@@ -38,7 +38,7 @@ public class HMDMApplication extends ResourceConfig {
                 guiceBridge.bridgeGuiceInjector(injector);
 
                 BeanConfig beanConfig = new BeanConfig();
-                beanConfig.setTitle("Headwind MDM API");
+                beanConfig.setTitle("Base MDM API");
                 beanConfig.setVersion("0.0.2");
                 beanConfig.setSchemes(new String[]{"http"});
                 beanConfig.setBasePath(servletContainer.getServletContext().getContextPath() + "/rest");

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# CPU monitoring for Headwind MDM
+# CPU monitoring for Base MDM
 #
 MAILS="info@example.com"
 TMP_BODY="/tmp/error_mail.txt"
@@ -43,11 +43,11 @@ if [ $CPU_EXCEEDS -eq 1 ]; then
     echo "$DATETIME Abnormal CPU usage: $CPU_TOTAL" >> $ERROR_LOG_FILE
 
      # Prepare e-mail
-    echo "Headwind MDM CPU abnormal usage detected: $CPU_TOTAL" > $TMP_BODY
+    echo "Base MDM CPU abnormal usage detected: $CPU_TOTAL" > $TMP_BODY
 	
 	for MAIL in $MAILS
     do
-        cat $TMP_BODY | mail -s "Problem at Headwind MDM server" $MAIL
+        cat $TMP_BODY | mail -s "Problem at Base MDM server" $MAIL
     done
     rm $TMP_BODY
 
@@ -76,11 +76,11 @@ else
         echo "$DATETIME server recovered" >> $ERROR_LOG_FILE
 
         # Prepare e-mail
-        echo "Headwind MDM server is recovered, CPU usage is normal: $CPU_TOTAL" > $TMP_BODY
+        echo "Base MDM server is recovered, CPU usage is normal: $CPU_TOTAL" > $TMP_BODY
 
         for MAIL in $MAILS
         do
-            cat $TMP_BODY | mail -s "Headwind MDM server is recovered" $MAIL
+            cat $TMP_BODY | mail -s "Base MDM server is recovered" $MAIL
         done
         rm $TMP_BODY
 

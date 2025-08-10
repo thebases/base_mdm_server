@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -37,6 +37,7 @@ public class NameResponse {
 
     private String appName;
     private String vendorName;
+    private Boolean vendorLogoOnly;
     private String vendorLink;
     private String signupLink;
     private String termsLink;
@@ -45,6 +46,14 @@ public class NameResponse {
      * <p>Constructs new <code>NameResponse</code> instance. This implementation does nothing.</p>
      */
     public NameResponse() {
+    }
+
+    public Boolean getVendorLogoOnly() {
+        return vendorLogoOnly;
+    }
+
+    public void setVendorLogoOnly(Boolean vendorLogoOnly) {
+        this.vendorLogoOnly = vendorLogoOnly;
     }
 
     public String getAppName() {

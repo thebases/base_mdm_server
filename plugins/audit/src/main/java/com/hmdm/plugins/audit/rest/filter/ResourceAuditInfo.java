@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -91,7 +91,7 @@ public enum ResourceAuditInfo {
     private final boolean payload;
 
     /**
-     * <p>A flag indicating if response is in Headwind MDM standard format and should be checked for errors.</p>
+     * <p>A flag indicating if response is in Base MDM standard format and should be checked for errors.</p>
      */
     private final boolean checkResponse;
 

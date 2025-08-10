@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -120,12 +120,15 @@ public abstract class AbstractLiquibaseModule extends AbstractModule {
     private Connection getConnection() {
         try {
             Class.forName(this.context.getInitParameter("JDBC.driver"));
+            log.info("JDBC driver found" + this.context.getInitParameter("JDBC.driver"));
             return DriverManager.getConnection(
                     this.context.getInitParameter("JDBC.url"),
                     this.context.getInitParameter("JDBC.username"),
                     this.context.getInitParameter("JDBC.password")
             );
+
         } catch (Exception e) {
+            log.info("JDBC driver found" + this.context.getInitParameter("JDBC.driver"));
             log.error("Error during open JDBC connection", e);
             throw new RuntimeException(e);
         }

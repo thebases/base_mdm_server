@@ -1,4 +1,4 @@
-Headwind MDM: a corporate launcher for Android
+Base MDM: a corporate launcher for Android
 ==============================================
 =   INSTALL INSTRUCTIONS FOR THE WEB PANEL   =
 ==============================================
@@ -30,5 +30,5 @@ postgres=# \q
 
 sudo ./hmdm_install.sh
 
-5. On success, the installer script provides you with the URL. Open Headwind MDM in browser.
+5. On success, the installer script provides you with the URL. Open Base MDM in browser.
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Headwind MDM installer script
+# Base MDM installer script
 # Tested on Ubuntu Linux 18.04 - 24.04, Ubuntu 22.04 is recommended
 #
 REPOSITORY_BASE=https://h-mdm.com/files
@@ -130,7 +130,7 @@ if [ ! -f $SERVER_WAR ]; then
     SERVER_WAR=$(ls hmdm*.war | tail -1)
 fi
 if [ ! -f $SERVER_WAR ]; then
-    echo "FAILED to find the WAR file of Headwind MDM!"
+    echo "FAILED to find the WAR file of Base MDM!"
     echo "Did you compile the project?"
     exit 1
 fi
@@ -140,7 +140,7 @@ if [ ! -d "$TOMCAT_HOME" ]; then
     read -e -p "Enter the Tomcat base directory: " TOMCAT_HOME
     if [ ! -d "$TOMCAT_HOME" ]; then
         echo "The directory $TOMCAT_HOME does not exist."
-        echo "Headwind MDM installer requires this directory to install the WAR file!"
+        echo "Base MDM installer requires this directory to install the WAR file!"
         exit 1
     fi
 fi
@@ -191,14 +191,14 @@ fi
 TABLE_EXISTS=$(echo "\dt users" | psql $PSQL_CONNSTRING 2>&1 | grep public)
 if [ ! -z "$TABLE_EXISTS" ]; then
     echo "The database is already setup."
-    echo "To re-deploy Headwind MDM, the database needs to be cleared."
+    echo "To re-deploy Base MDM, the database needs to be cleared."
     echo "Clear the database? ALL DATA WILL BE LOST!"
     read -e -p "Type \"erase\" to clear the database and continue setup: " RESPONSE
     if [ "$RESPONSE" == "erase" ]; then
         echo "DROP TABLE IF EXISTS applicationfilestocopytemp, applications, applicationversions, applicationversionstemp, configurationapplicationparameters, configurationapplications, configurationapplicationsettings, configurationfiles, configurations, customers, databasechangelog, databasechangeloglock, deviceapplicationsettings, devicegroups, devices, devicestatuses, groups, icons, pendingpushes, pendingsignup, permissions, plugin_apuppet_data, plugin_apuppet_settings, plugin_audit_log, plugin_deviceinfo_deviceparams, plugin_deviceinfo_deviceparams_device, plugin_deviceinfo_deviceparams_gps, plugin_deviceinfo_deviceparams_mobile, plugin_deviceinfo_deviceparams_mobile2, plugin_deviceinfo_deviceparams_wifi, plugin_deviceinfo_settings, plugin_devicelocations_history, plugin_devicelocations_latest, plugin_devicelocations_settings, plugin_devicelog_log, plugin_devicelog_setting_rule_devices, plugin_devicelog_settings, plugin_devicelog_settings_rules, plugin_devicereset_status, plugin_knox_rules, plugin_messaging_messages, plugin_openvpn_defaults, plugin_photo_photo, plugin_photo_photo_places, plugin_photo_places, plugin_photo_settings, plugin_push_messages, plugin_push_schedule, plugins, pluginsdisabled, pushmessages, settings, trialkey, uploadedfiles, usagestats, userconfigurationaccess, userdevicegroupsaccess, userhints, userhinttypes, userrolepermissions, userroles, userrolesettings, users CASCADE" |  psql $PSQL_CONNSTRING >/dev/null 2>&1
 	echo "Database has been cleared."
     else
-        echo "Headwind MDM installation aborted"
+        echo "Base MDM installation aborted"
 	exit 1
     fi
 fi
@@ -206,12 +206,12 @@ fi
 echo
 echo "File storage setup"
 echo "=================="
-echo "Please choose where the files uploaded to Headwind MDM will be stored"
+echo "Please choose where the files uploaded to Base MDM will be stored"
 echo "If the directory doesn't exist, it will be created"
 echo "##### FOR TOMCAT 9, USE SANDBOXED DIR: /var/lib/tomcat9/work #####"
 echo
 
-read -e -p "Headwind MDM storage directory [$DEFAULT_LOCATION]: " -i "$DEFAULT_LOCATION" LOCATION
+read -e -p "Base MDM storage directory [$DEFAULT_LOCATION]: " -i "$DEFAULT_LOCATION" LOCATION
 
 # Create directories
 if [ ! -d $LOCATION ]; then
@@ -240,7 +240,7 @@ chown $TOMCAT_USER:$TOMCAT_USER $LOCATION/log4j-hmdm.xml
 echo
 echo "Please choose the directory where supply scripts will be located."
 echo
-read -e -p "Headwind MDM scripts directory [$DEFAULT_SCRIPT_LOCATION]: " -i "$DEFAULT_SCRIPT_LOCATION" SCRIPT_LOCATION
+read -e -p "Base MDM scripts directory [$DEFAULT_SCRIPT_LOCATION]: " -i "$DEFAULT_SCRIPT_LOCATION" SCRIPT_LOCATION
 if [ ! -d $SCRIPT_LOCATION ]; then
     mkdir -p $SCRIPT_LOCATION || exit 1
 fi
@@ -248,7 +248,7 @@ fi
 echo
 echo "Web application setup"
 echo "====================="
-echo "Headwind MDM requires access from Internet"
+echo "Base MDM requires access from Internet"
 echo "Please assign a public domain name to this server"
 echo
 
@@ -267,7 +267,7 @@ read -e -p "Project path on server (e.g. /hmdm) or ROOT: " -i "$DEFAULT_BASE_PAT
 
 # HTTPS via LetsEncrypt
 echo
-echo "To enable password recovery function, Headwind MDM must be connected to SMTP."
+echo "To enable password recovery function, Base MDM must be connected to SMTP."
 echo "Password recovery is an optional but recommended feature."
 read -e -p "Setup SMTP credentials [Y/n]?: " -i "Y" REPLY
 
@@ -378,7 +378,7 @@ rm -f $TEMP_SQL_FILE > /dev/null 2>&1
 
 echo
 echo "======================================"
-echo "Minimal installation of Headwind MDM has been done!"
+echo "Minimal installation of Base MDM has been done!"
 echo "At this step, you can open in your web browser:"
 echo "http://$BASE_DOMAIN:8080$BASE_PATH"
 echo "Login: admin:admin"
@@ -422,7 +422,7 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
 
     echo
     echo "======================================"
-    echo "Secure installation of Headwind MDM has been done!"
+    echo "Secure installation of Base MDM has been done!"
     echo "At this step, you can open in your web browser:"
     echo "https://$BASE_DOMAIN:8443$BASE_PATH"
     echo
@@ -482,7 +482,7 @@ fi
 
 echo
 echo "======================================"
-echo "Headwind MDM installation is completed!"
+echo "Base MDM installation is completed!"
 echo "To access your web panel, open in the web browser:"
 echo "$PROTOCOL://$BASE_HOST$BASE_PATH"
 echo "Login: admin:admin"

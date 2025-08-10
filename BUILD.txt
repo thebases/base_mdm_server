@@ -1,4 +1,4 @@
-Headwind MDM: a corporate launcher for Android
+Base MDM: a corporate launcher for Android
 ==============================================
 =    BUILD INSTRUCTIONS FOR THE WEB PANEL    =
 ==============================================
@@ -23,7 +23,7 @@ curl localhost:8080
 # git clone https://github.com/h-mdm/hmdm-server
 # cd hmdm-server
 
-4. If you are planning to run or debug Headwind MDM in IDE, create the properties
+4. If you are planning to run or debug Base MDM in IDE, create the properties
 file from the sample
 
 # cp server/build.properties.example server/build.properties
@@ -46,5 +46,5 @@ postgres=# \q
 
 sudo ./hmdm_install.sh
 
-8. On success, the installer script provides you with the URL. Open Headwind MDM in browser.
+8. On success, the installer script provides you with the URL. Open Base MDM in browser.
 

@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -48,6 +48,7 @@ public class ConfigureModule extends AbstractModule {
     private final String rebrandingVendorParameter = "rebranding.vendor.name";
     private final String rebrandingVendorLinkParameter = "rebranding.vendor.link";
     private final String rebrandingLogoParameter = "rebranding.logo";
+    private final String rebrandingLogoOnlyParameter = "rebranding.logoOnly";
     private final String rebrandingMobileNameParameter = "rebranding.mobile.name";
     private final String rebrandingSignupLinkParameter = "rebranding.signup.link";
     private final String rebrandingTermsLinkParameter = "rebranding.terms.link";
@@ -155,6 +156,8 @@ public class ConfigureModule extends AbstractModule {
         this.bindConstant().annotatedWith(Names.named(rebrandingVendorLinkParameter)).to(opt != null ? opt : "");
         opt = this.context.getInitParameter(rebrandingLogoParameter);
         this.bindConstant().annotatedWith(Names.named(rebrandingLogoParameter)).to(opt != null ? opt : "");
+        opt = this.context.getInitParameter(rebrandingLogoOnlyParameter);
+        this.bindConstant().annotatedWith(Names.named(rebrandingLogoOnlyParameter)).to(opt != null ? true : false);
         opt = this.context.getInitParameter(rebrandingMobileNameParameter);
         this.bindConstant().annotatedWith(Names.named(rebrandingMobileNameParameter)).to(opt != null ? opt : "");
         opt = this.context.getInitParameter(rebrandingSignupLinkParameter);

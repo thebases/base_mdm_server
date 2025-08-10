@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -183,7 +183,7 @@ public class Configuration implements CustomerData, Serializable {
     private DesktopHeader desktopHeader = NO_HEADER;
     @ApiModelProperty("Desktop header template")
     private String desktopHeaderTemplate;
-    @ApiModelProperty("If checked, the data of the device status bar (time, battery, etc) are displayed by Headwind MDM")
+    @ApiModelProperty("If checked, the data of the device status bar (time, battery, etc) are displayed by Base MDM")
     private boolean displayStatus;
 
     // An unique key used for retrieving the QR code for configuration

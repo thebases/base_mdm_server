@@ -1,6 +1,6 @@
 /*
  *
- * Headwind MDM: Open Source Android MDM Software
+ * Base MDM: Open Source Android MDM Software
  * https://h-mdm.com
  *
  * Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
@@ -291,7 +291,7 @@ public class CustomerDAO {
             configurationMapper.insertConfigurationApplications(newConfiguration.getId(), configApplications);
             applicationMapper.getPrecedingVersion(newConfiguration.getId());
         }
-        // Files are not copied because there's no "shared files" in Headwind MDM
+        // Files are not copied because there's no "shared files" in Base MDM
 
         return newConfiguration.getId();
     }
