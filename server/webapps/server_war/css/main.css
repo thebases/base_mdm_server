@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-        padding: 8px;
+    padding: 8px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -38,10 +38,10 @@ body {
 }
 
 /* ≤ 480px (phones) */
-@media (width <= 480px) {
-  .hide-on-small-screen{
-    display: none;
-}
+@media (width <=480px) {
+    .hide-on-small-screen {
+        display: none;
+    }
 }
 
 /* 768–1023px (tablets) */
@@ -61,6 +61,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+
     .navbar-nav {
         margin: 4px;
     }
@@ -292,7 +293,7 @@ btn-promo:hover {
 
 .fullscreen {
     width: 100vw;
-    height:  100vh;
+    height: 100vh;
     /* margin: 0px 20px; */
 }
 
@@ -1153,6 +1154,8 @@ td.app-desc span {
 
 .tab-content .table {
     margin-bottom: 0px !important;
+    overflow: auto;
+    display: block;
 }
 
 .right {

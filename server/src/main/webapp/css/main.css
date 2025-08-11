@@ -1154,6 +1154,8 @@ td.app-desc span {
 
 .tab-content .table {
     margin-bottom: 0px !important;
+    overflow: auto;
+    display: block;
 }
 
 .right {
