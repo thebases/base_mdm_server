@@ -125,4 +125,9 @@
     <!-- <Parameter name="rebranding.signup.link" value="https://thebase.vn" /> -->
     <Parameter name="rebranding.term.link" value="https://thebase.vn/terms" />
     
+
+    <!-- JWT parameters are allow you to customise secret and validity token -->
+    <!-- <Parameter name="jwt.secretkey" value="${jwt.secretkey}"/> -->
+    <!-- <Parameter name="jwt.validity" value="${jwt.validity}"/> -->
+    <!-- <Parameter name="jwt.validityrememberme" value="${jwt.validityrememberme}"/> -->
 </Context>
