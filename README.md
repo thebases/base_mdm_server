@@ -1,10 +1,6 @@
 # Base MDM - a platform for corporate Android applications
 
-Base MDM is a Mobile Device Management platform for Android devices, designed for corporate app developers and IT managers.
-
-(c) 2020 h-mdm.com
-
-[https://h-mdm.com](https://h-mdm.com)
+Base MDM is a Mobile Device Management platform for Android devices, designed for corporate app developers and IT managers and is fork of H-mdm
 
 ## Features
 
@@ -19,18 +15,6 @@ Base MDM is a Mobile Device Management platform for Android devices, designed fo
  - Collection of application logs in the web panel
  - Centralized configuration of corporate applications
 
-The *Enterprise edition* of the platform has more features:
-
- - Restriction of mobile user functions ("kid's shell" for corporate users)
- - Disable to change the mobile device settings
- - Kiosk mode (COSU, single-task mode)
- - Sending images from mobile device to server
- - Cloud-based or self-hosted server setup
- - Premium support of enterprise users
- - Custom plugin development services
-
-The enterprise edition may be ordered on the [project website](https://h-mdm.com).
-
 ## Quick start
 
 Base MDM control panel is cross-platform (it is written in Java and uses Tomcat web server). However the best OS for the deployment of Base MDM control panel is Ubuntu Linux. 
@@ -41,16 +25,7 @@ Base MDM control panel is cross-platform (it is written in Java and uses Tomcat 
  - Perform the factory reset on your Android device, tap 7 times on the welcome screen
  - Follow the instructions to scan a QR code and enroll the mobile agent
  
-## Contributing
 
-Base MDM is a platform making corporate app development easier. We are happy to get more powerful plugins related to mobile device management. 
-
-Please contact us on the [project website](https://h-mdm.com) if you'd like to:
-
- - develop a public plugin for Base MDM
- - suggest a feature
- - order the custom development
- - report a bug
 
 
 

@@ -57,8 +57,8 @@ mqtt.external=true
 #mqtt.admin.username=thebase
 #mqtt.admin.password=12345678
 mqtt.server.uri=ipn.beanbakery.vn:18883
-mqtt.admin.username=atom
-mqtt.admin.password=12345678
+mqtt.admin.username=basemdm
+mqtt.admin.password=theBase15112023@
 mqtt.client.tag=ATOM-MDM
 
 
