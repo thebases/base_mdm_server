@@ -41,13 +41,15 @@ angular.module('headwind-kiosk',
         'ja_JP': 'ja_JP',
         'tr': 'tr_TR',
         'tr_TR': 'tr_TR',
+        'vi': 'vi_VN',
+        'vi_VN': 'vi_VN',
         'it': 'it_IT',
         'it_IT': 'it_IT'
     })
     .constant("LOCALIZATION_BUNDLES", [
         'en_US', 'ru_RU', 'fr_FR', 'pt_PT', 'ar_AE', 'es_ES', 'de_DE',
-        'zh_TW', 'zh_CN', 'ja_JP', 'tr_TR', 'it_IT'])
-    .constant("APP_VERSION", "5.35.3") // Update this value on each commit
+        'zh_TW', 'zh_CN', 'ja_JP', 'tr_TR', 'vi_VN', 'it_IT'])
+    .constant("APP_VERSION", "5.37.1") // Update this value on each commit
     .constant("ENGLISH", "en_US")
     .provider('getBrowserLanguage', function (ENGLISH, SUPPORTED_LANGUAGES) {
         this.f = function () {
@@ -234,6 +236,17 @@ angular.module('headwind-kiosk',
                 },
                 resolve: {
                     openTab: function () {return "GROUPS"}
+                }
+            })
+            .state('icons', {
+                url: '/icons',
+                templateUrl: 'app/components/main/view/content.html',
+                controller: 'TabController',
+                ncyBreadcrumb: {
+                    label: '{{"tab.icons" | localize}}' //label to show in breadcrumbs
+                },
+                resolve: {
+                    openTab: function () {return "ICONS"}
                 }
             })
             .state('hints', {

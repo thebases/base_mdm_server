@@ -56,10 +56,10 @@ mqtt.external=true
 #mqtt.server.uri=mqtt.thebase.vn:1883
 #mqtt.admin.username=thebase
 #mqtt.admin.password=12345678
-mqtt.server.uri=ipn.beanbakery.vn:18883
+mqtt.server.uri=mqtt.thebase.vn:18883
 mqtt.admin.username=basemdm
 mqtt.admin.password=theBase15112023@
-mqtt.client.tag=ATOM-MDM
+mqtt.client.tag=BASE-MDM
 
 
 # MQTT authentication for more security (supported by Base MDM launcher v5.05 and above)
@@ -70,7 +70,7 @@ mqtt.ssl=true
 
 # Delaying MQTT messages in milliseconds to avoid congestion
 mqtt.message.delay=1000
-mqtt.message.qos=2
+mqtt.message.qos=1
 
 # Fast device search by last characters, here's the length
 device.fast.search.chars=5

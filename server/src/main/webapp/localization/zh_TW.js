@@ -288,7 +288,7 @@ document.localization ['zh_TW'] = {
     'form.configuration.settings.mdm.kiosk.mode':"單一應用程序模式",
     'form.configuration.settings.mdm.app.main':"MDM 應用程序",
     'form.configuration.settings.mdm.component.event.receiver':"管理員接收類",
-    'form.configuration.settings.mdm.component.event.receiver.placeholder':"應該是 com.hmdm.launcher.AdminReceiver",
+    'form.configuration.settings.mdm.component.event.receiver.placeholder':"應該是 com.base.launcher.AdminReceiver",
     'form.configuration.settings.mdm.component.wifi.ssid':"WiFi SSID",
     'form.configuration.settings.mdm.component.wifi.ssid.placeholder':"註冊WiFi SSID-留空以手動輸入",
     'form.configuration.settings.mdm.component.wifi.password':"WiFi密碼",

@@ -36,7 +36,7 @@ public class Application implements CustomerData, Serializable {
 
     private static final long serialVersionUID = -5580525163643021270L;
 
-    public static final String DEFAULT_LAUNCHER_PACKAGE = "com.hmdm.launcher";
+    public static final String DEFAULT_LAUNCHER_PACKAGE = "com.base.launcher";
 
     public static final String ARCH_ARMEABI = "armeabi";
     public static final String ARCH_ARM64 = "arm64";

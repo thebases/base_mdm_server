@@ -288,7 +288,7 @@ document.localization ['tr_TR'] = {
 	'form.configuration.settings.mdm.kiosk.mode': 'Kiosk modu',
 	'form.configuration.settings.mdm.app.main': 'MDM uygulaması',
 	'form.configuration.settings.mdm.component.event.receiver': 'Yönetici alıcı sınıfı',
-	'form.configuration.settings.mdm.component.event.receiver.placeholder': 'com.hmdm.launcher.AdminReceiver olmalı',
+	'form.configuration.settings.mdm.component.event.receiver.placeholder': 'com.base.launcher.AdminReceiver olmalı',
 	'form.configuration.settings.mdm.component.wifi.ssid': 'WiFi SSID',
 	'form.configuration.settings.mdm.component.wifi.ssid.placeholder': 'Kayıt WiFi SSID - manuel olarak girmek için boş bırakın',
 	'form.configuration.settings.mdm.component.wifi.password': 'WiFi şifresi',

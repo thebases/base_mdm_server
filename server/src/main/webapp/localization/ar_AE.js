@@ -288,7 +288,7 @@ document.localization ['ar_AE'] = {
     "form.configuration.settings.mdm.kiosk.mode": 'Kiosk وضعية',
     "form.configuration.settings.mdm.app.main": 'تطبيق MDM',
     'form.configuration.settings.mdm.component.event.receiver': 'فئة المتلقي المسؤول',
-    "form.configuration.settings.mdm.component.event.receiver.placeholder": 'يجب أن يكون com.hmdm.launcher.AdminReceiver',
+    "form.configuration.settings.mdm.component.event.receiver.placeholder": 'يجب أن يكون com.base.launcher.AdminReceiver',
     "form.configuration.settings.mdm.component.wifi.ssid": 'WiFi SSID',
     "form.configuration.settings.mdm.component.wifi.ssid.placeholder": 'اتركه فارغًا للدخول يدويًا - WiFi SSID تسجيل',
     "form.configuration.settings.mdm.component.wifi.password": 'WiFi كلمة مرور',

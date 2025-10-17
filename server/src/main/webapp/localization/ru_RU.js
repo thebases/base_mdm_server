@@ -288,7 +288,7 @@ document.localization[ 'ru_RU' ] = {
     'form.configuration.settings.mdm.kiosk.mode': 'Режим киоска',
     'form.configuration.settings.mdm.app.main': 'MDM приложение',
     'form.configuration.settings.mdm.component.event.receiver': 'Класс - администратор',
-    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Должен быть com.hmdm.launcher.AdminReceiver',
+    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Должен быть com.base.launcher.AdminReceiver',
     'form.configuration.settings.mdm.component.wifi.ssid': 'WiFi SSID',
     'form.configuration.settings.mdm.component.wifi.ssid.placeholder': 'WiFi SSID - оставьте пустым для ручного ввода',
     'form.configuration.settings.mdm.component.wifi.password': 'WiFi пароль',

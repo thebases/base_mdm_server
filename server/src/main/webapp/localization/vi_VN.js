@@ -283,7 +283,7 @@ document.localization ['vi_VN'] = {
     'form.configuration.settings.mdm.kiosk.mode': 'Chế độ kiosk',
     'form.configuration.settings.mdm.app.main': 'Ứng dụng MDM',
     'form.configuration.settings.mdm.component.event.receiver': 'Lớp nhận sự kiện quản trị',
-    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Phải là com.hmdm.launcher.AdminReceiver',
+    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Phải là com.base.launcher.AdminReceiver',
     'form.configuration.settings.mdm.component.wifi.ssid': 'SSID WiFi',
     'form.configuration.settings.mdm.component.wifi.ssid.placeholder': 'SSID WiFi để đăng ký – để trống để nhập thủ công',
     'form.configuration.settings.mdm.component.wifi.password': 'Mật khẩu WiFi',

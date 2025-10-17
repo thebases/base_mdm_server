@@ -620,14 +620,14 @@ angular.module('headwind-kiosk')
                                 return app;
                             });
                             $scope.applications = response.data.filter(function (app) {
-                                // Application com.hmdm.launcher is made available by default when creating new configuration
-                                return app.action != '0' && (!app.system || $scope.showSystemApps) || (!configId && app.pkg === 'com.hmdm.launcher' && app.action != '2');
+                                // Application com.base.launcher is made available by default when creating new configuration
+                                return app.action != '0' && (!app.system || $scope.showSystemApps) || (!configId && app.pkg === 'com.base.launcher' && app.action != '2');
                             });
 
                             // For new configuration use default app for main app and content receiver
                             if (!configId) {
                                 let mainAppCandidates = response.data.filter(function (app) {
-                                    return app.pkg === 'com.hmdm.launcher' && app.action != '2';
+                                    return app.pkg === 'com.base.launcher' && app.action != '2';
                                 });
 
                                 if (mainAppCandidates.length > 0) {
@@ -1348,7 +1348,7 @@ angular.module('headwind-kiosk')
                 $scope.dates.systemUpdateTo = d2;
                 $scope.dates.appUpdateFrom = d1;
                 $scope.dates.appUpdateTo = d2;
-                $scope.configuration.eventReceivingComponent = 'com.hmdm.launcher.AdminReceiver';
+                $scope.configuration.eventReceivingComponent = 'com.base.launcher.AdminReceiver';
                 $scope.configuration.systemUpdateType = 0;
             }
 

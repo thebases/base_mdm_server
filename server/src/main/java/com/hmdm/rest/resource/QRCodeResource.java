@@ -318,24 +318,24 @@ public class QRCodeResource {
         String deviceIdEntry = "";
         if (deviceID != null && !deviceID.trim().isEmpty()) {
             deviceID = deviceID.trim();
-            deviceIdEntry = "\"com.hmdm.DEVICE_ID\":\"" + deviceID + "\",";
+            deviceIdEntry = "\"com.base.DEVICE_ID\":\"" + deviceID + "\",";
         }
 
 
         String configurationEntry = "";
         String customerEntry = "";
         if (createOnDemand != null && createOnDemand.equals("1")) {
-            configurationEntry = "\"com.hmdm.CONFIG\":\"" + Integer.toString(configuration.getId()) + "\",\n";
+            configurationEntry = "\"com.base.CONFIG\":\"" + Integer.toString(configuration.getId()) + "\",\n";
 
             if (!unsecureDAO.isSingleCustomer()) {
                 Customer customer = customerDAO.findById(configuration.getCustomerId());
-                customerEntry = "\"com.hmdm.CUSTOMER\":\"" + StringUtil.jsonEscape(customer.getName()) + "\",\n";
+                customerEntry = "\"com.base.CUSTOMER\":\"" + StringUtil.jsonEscape(customer.getName()) + "\",\n";
             }
         }
 
         String groupEntry = "";
         if (groups != null && groups.size() > 0) {
-            groupEntry = "\"com.hmdm.GROUP\":\"";
+            groupEntry = "\"com.base.GROUP\":\"";
             boolean needComma = false;
             for (String group : groups) {
                 if (needComma) {
@@ -350,7 +350,7 @@ public class QRCodeResource {
 
         String useIdEntry = "";
         if (useId != null) {
-            useIdEntry = "\"com.hmdm.DEVICE_ID_USE\":\"" + StringUtil.jsonEscape(useId) + "\",\n";
+            useIdEntry = "\"com.base.DEVICE_ID_USE\":\"" + StringUtil.jsonEscape(useId) + "\",\n";
         }
 
 
@@ -360,8 +360,8 @@ public class QRCodeResource {
                 customerEntry +
                 useIdEntry +
                 groupEntry +
-                "\"com.hmdm.BASE_URL\":\"" + this.baseUrlForQrCode + "\",\n" +
-                "\"com.hmdm.SERVER_PROJECT\":\"" + contextPath + "\"" +
+                "\"com.base.BASE_URL\":\"" + this.baseUrlForQrCode + "\",\n" +
+                "\"com.base.SERVER_PROJECT\":\"" + contextPath + "\"" +
                 "}\n";
         return bundle;
     }

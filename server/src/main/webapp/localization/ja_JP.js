@@ -288,7 +288,7 @@ document.localization ['ja_JP'] = {
     'form.configuration.settings.mdm.kiosk.mode': 'キオスクモード',
     'form.configuration.settings.mdm.app.main': 'MDMアプリケーション',
     'form.configuration.settings.mdm.component.event.receiver': '管理レシーバークラス',
-    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'com.hmdm.launcher.AdminReceiverである必要があります',
+    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'com.base.launcher.AdminReceiverである必要があります',
     'form.configuration.settings.mdm.component.wifi.ssid': 'WiFi SSID',
     'form.configuration.settings.mdm.component.wifi.ssid.placeholder': 'WiFi SSID の登録 - 空のままにして手動で入力してください',
     'form.configuration.settings.mdm.component.wifi.password': 'WiFi パスワード',

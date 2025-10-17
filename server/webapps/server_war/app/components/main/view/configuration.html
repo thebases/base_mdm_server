@@ -817,6 +817,12 @@
                                 <input ng-model='configuration.kioskExit' name="kioskExit" type='checkbox' class='form-control'/>
                             </div>
                         </div>
+                        <div class='form-group'>
+                            <label class='col-sm-3 control-label' localized>form.configuration.settings.mdm.kiosk.screen</label>
+                            <div class='col-sm-1'>
+                                <input ng-model='configuration.kioskScreenOn' name="kioskScreenOn" type='checkbox' class='form-control'/>
+                            </div>
+                        </div>
                     </div>
 
                     <div class='form-group'>
@@ -848,6 +854,15 @@
                                 <option ng-value="'NONE'" ng-selected="configuration.wifiSecurityType === 'NONE'">NONE</option>
                             </select>
                             <p class="field-hint" localized>form.configuration.settings.mdm.component.wifi.notice</p>
+                        </div>
+                    </div>
+
+                    <div class='form-group'>
+                        <label class='col-sm-3 control-label' localized>form.configuration.settings.mdm.launcher</label>
+                        <div class='col-sm-9'>
+                            <input ng-model='configuration.launcherUrl'
+                                   name="c_launcherUrl" type='text' class='form-control'
+                                   localized-placeholder='form.configuration.settings.mdm.launcher.placeholder'/>
                         </div>
                     </div>
 
@@ -1103,26 +1118,23 @@
                                     <thead>
                                     <tr>
                                         <th localized>table.heading.file.url</th>
-                                        <th localized>table.heading.file.devicepath</th>
                                         <th localized>table.heading.file.description</th>
-                                        <th localized>table.heading.file.lastUpdate</th>
-                                        <th localized>table.heading.file.action</th>
+                                        <th localized>table.heading.file.devicepath</th>
+                                        <th localized>table.heading.file.variable</th>
+                                        <th localized>table.heading.file.remove</th>
                                         <th localized class="actions-column-110"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr ng-repeat="file in files | orderBy:'name'">
+                                    <tr ng-repeat="file in files | orderBy:'name' | limitTo:filesPaging.pageSize:(filesPaging.currentPage-1)*filesPaging.pageSize">
                                         <td>{{file.url}}</td>
-                                        <td>{{file.path}}</td>
                                         <td>{{file.description}}</td>
-                                        <td>{{file.lastUpdate | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
-                                        <td ng-if="!file.remove" localized>form.configuration.files.action.upload</td>
-                                        <td ng-if="file.remove" localized>form.configuration.files.action.remove</td>
-                                        <td>
+                                        <td>{{file.path}}</td>
+                                        <td>{{file.replaceVariables ? '✓' : ''}}</td>
+                                        <td style="text-align: center; padding-top: 11px"><input type="checkbox" ng-model="file.remove"
+                                                                              localized-title="table.heading.file.remove.hint"></td>
+                                        <td class="text-right" style="padding-right: 16px">
                                             <div>
-                                                <button class="btn btn-default" ng-click="editFile(file)">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </button>
                                                 <button class="btn btn-default" ng-click="removeFile(file)">
                                                     <span class="glyphicon glyphicon-trash"></span>
                                                 </button>

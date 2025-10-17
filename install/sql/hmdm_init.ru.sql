@@ -55,11 +55,11 @@ INSERT INTO applications (id, pkg, name, showicon, customerid, system, latestver
     (4, 'com.google.android.apps.docs', 'Google Drive', true, 1, true, 10003, false),
     (30, 'com.huawei.android.launcher', 'Штатная оболочка (Huawei)', false, 1, true, 10029, false),
     (8, 'com.android.browser', 'Браузер (generic)', true, 1, true, 10007, false),
-    (46, 'com.hmdm.launcher', 'Base MDM', false, 1, false, 10045, false),
+    (46, 'com.base.launcher', 'Base MDM', false, 1, false, 10045, false),
     (47, 'com.huawei.android.internal.app', 'Huawei - выбор лаунчера', false, 1, true, 10046, false),
-    (48, 'com.hmdm.pager', 'Base MDM Пейджер', true, 1, false, 10047, false),
+    (48, 'com.base.pager', 'Base MDM Пейджер', true, 1, false, 10047, false),
     (49, 'com.hmdm.phoneproxy', 'Прокси для телефона', true, 1, false, 10048, false),
-    (50, 'com.hmdm.emuilauncherrestarter', 'Помощник обновления Base MDM', false, 1, false, 10049, false),
+    (50, 'com.base.emuilauncherrestarter', 'Помощник обновления Base MDM', false, 1, false, 10049, false),
     (51, 'com.miui.cleanmaster', 'MIUI Мастер очистки', false, 1, true, 10050, false),
     (52, 'com.miui.gallery', 'MIUI Галерея', true, 1, true, 10051, false),
     (53, 'com.miui.notes', 'MIUI Заметки', true, 1, true, 10052, false),
@@ -216,9 +216,9 @@ ALTER TABLE applications ADD CONSTRAINT applications_latestversion_fkey FOREIGN 
 
 DELETE FROM configurations;
 INSERT INTO configurations (id, name, description, type, password, backgroundcolor, textcolor, backgroundimageurl, iconsize, desktopheader, usedefaultdesignsettings, customerid, gps, bluetooth, wifi, mobiledata, mainappid, eventreceivingcomponent, kioskmode, qrcodekey, contentappid,autoupdate, blockstatusbar, systemupdatetype, systemupdatefrom, systemupdateto, pushoptions, keepalivetime, rundefaultlauncher, permissive, kioskexit) VALUES 
-(1, 'Управляемый Лаунчер', 'Лаунчер Base MDM отображает иконки только разрешенных администратором приложений. Для управления разрешенными приложениями используйте вкладку Приложения.', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.hmdm.launcher.AdminReceiver', false, '6fb9c8dc81483173a0c0e9f8b2e46be1', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, NULL, NULL, true),
-(2, 'MIUI (Xiaomi Redmi)', 'Оптимизирована для устройств на базе MIUI', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.hmdm.launcher.AdminReceiver', false, '8e6ca072ddb926a1af61578dfa9fc334', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, NULL, NULL, true),
-(3, 'Фоновый режим', 'Base MDM работает в фоне, не ограничивая возможности пользователя.', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.hmdm.launcher.AdminReceiver', false, '350e0fb7fc3f4b7fe61cac75fd43818f', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, true, true, true);
+(1, 'Управляемый Лаунчер', 'Лаунчер Base MDM отображает иконки только разрешенных администратором приложений. Для управления разрешенными приложениями используйте вкладку Приложения.', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.base.launcher.AdminReceiver', false, '6fb9c8dc81483173a0c0e9f8b2e46be1', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, NULL, NULL, true),
+(2, 'MIUI (Xiaomi Redmi)', 'Оптимизирована для устройств на базе MIUI', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.base.launcher.AdminReceiver', false, '8e6ca072ddb926a1af61578dfa9fc334', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, NULL, NULL, true),
+(3, 'Фоновый режим', 'Base MDM работает в фоне, не ограничивая возможности пользователя.', 0, '12345678', '', '', NULL, 'SMALL', 'NO_HEADER', true, 1, NULL, NULL, NULL, NULL, 10045, 'com.base.launcher.AdminReceiver', false, '350e0fb7fc3f4b7fe61cac75fd43818f', NULL, false, false, 0, NULL, NULL, 'mqttAlarm', 300, true, true, true);
 
 SELECT pg_catalog.setval('public.configurations_id_seq', 3, true);
 

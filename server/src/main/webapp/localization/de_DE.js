@@ -288,7 +288,7 @@ document.localization ['de_DE'] = {
     'form.configuration.settings.mdm.kiosk.mode': 'Kiosk-Modus',
     'form.configuration.settings.mdm.app.main': 'MDM-Anwendung',
     'form.configuration.settings.mdm.component.event.receiver': 'Admin-Empfängerklasse',
-    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Sollte com.hmdm.launcher.AdminReceiver sein',
+    'form.configuration.settings.mdm.component.event.receiver.placeholder': 'Sollte com.base.launcher.AdminReceiver sein',
     'form.configuration.settings.mdm.component.wifi.ssid': 'WiFi SSID',
     'form.configuration.settings.mdm.component.wifi.ssid.placeholder': 'WiFi-SSID registrieren - leer lassen, manuell eingeben',
     'form.configuration.settings.mdm.component.wifi.password': 'WiFi password',

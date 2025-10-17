@@ -11,7 +11,7 @@ public class UpdateEntry implements Serializable {
     private static final long serialVersionUID = 514589555335932784L;
 
     public static final String WEB_PKG = "web";
-    public static final String LAUNCHER_PKG = "com.hmdm.launcher";
+    public static final String LAUNCHER_PKG = "com.base.launcher";
 
     public static final String DISABLED_CUSTOM = "custom";
     public static final String DISABLED_NOT_MASTER = "not_master";
