@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Licensed to the Apache Software Foundation (ASF) under one or more
+     contributor license agreements.  See the NOTICE file distributed with
+     this work for additional information regarding copyright ownership.
+     The ASF licenses this file to You under the Apache License, Version 2.0
+     (the "License"); you may not use this file except in compliance with
+     the License.  You may obtain a copy of the License at
+     
+     http://www.apache.org/licenses/LICENSE-2.0
+     
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
+     
+     <!-- Default set of monitored resources. If one of these changes, the    -->
+     <!-- web application will be reloaded.                                   -->
+     <WatchedResource>WEB-INF/web.xml</WatchedResource>
+     <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+     
+     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+     <!--
+          <Manager pathname="" />
+     -->
+     <!-- database settings -->
+     <Parameter name="JDBC.driver"   value="org.postgresql.Driver"/>
+     <Parameter name="JDBC.url"      value="jdbc:postgresql://localhost:5432/base_mdm" />
+     <Parameter name="JDBC.username" value="basedb"/>
+     <Parameter name="JDBC.password" value="theBase15112023@"/>
+     
+     <!-- This directory is used to as a base directory to store app data -->
+     <Parameter name="base.directory" value="/opt/base-mdm/base-mdm/server"/>
+     
+     <!-- files directory -->
+     <Parameter name="files.directory" value="/opt/base-mdm/server/files"/>
+     
+     <!-- base url -->
+     <Parameter name="base.url" value="https://mdm.thebase.vn"/>
+     
+     <Parameter name="usage.scenario" value="private"/>
+     
+     <!-- If set to 1, the device configuration request must be signed by a shared secret (setup in hash.secret and in the Android app) 
+          0 or empty value does not require request signature which is less secure -->
+     <Parameter name="secure.enrollment" value="0"/>
+     <Parameter name="hash.secret" value="068bd957181f91076e962a61c8788487"/>
+     
+     <!-- If set to 1, Strict-Transport-Security (HSTS) is turned on -->
+     <!--    <Parameter name="strict.transport.security" value="${strict.transport.security}"/> -->
+     
+     <!-- This directory is used to store files by plugins, must be accessible for tomcat user -->
+     <Parameter name="plugins.files.directory" value="/opt/base-mdm/server/plugins"/>
+     
+     <!-- Configuration for logging plugin, do not change this -->
+     <Parameter name="plugin.devicelog.persistence.config.class" value="com.hmdm.plugins.devicelog.persistence.postgres.DeviceLogPostgresPersistenceConfiguration"/>
+     
+     
+     <Parameter name="role.orgadmin.id" value="2"/>
+     
+     <!-- Swagger Docs UI location -->
+     <Parameter name="swagger.host" value="https://mdm.thebase.vn"/>
+     <Parameter name="swagger.base.path" value="https://mdm.thebase.vn/rest"/>
+     
+     <!-- A path to a file to be created by the application initializer to signal on initialization completion -->
+     <Parameter name="initialization.completion.signal.file" value="/opt/base-mdm/server/initialized.txt"/>
+     
+     <Parameter name="aapt.command" value="aapt"/>
+     
+     <Parameter name="log4j.config" value="file:////opt/base-mdm/server/log4j-prod.xml"/>
+     
+     <Parameter name="plugin.photo.enable.places" value="${plugin.photo.enable.places}"/>
+     
+     <!-- If Headwind MDM uses an embedded MQTT broker, this parameter is a
+          local address to which the server binds to listen on port 31000
+          (MQTT for Push notifications), for example, demo.h-mdm.com:31000
+          If an external MQTT server is used, this is the address of this MQTT server
+     -->
+     <Parameter name="mqtt.admin.username" value="basemdm"/>
+     <Parameter name="mqtt.admin.password" value="theBase15112023@"/>
+     <Parameter name="mqtt.server.uri" value="10.0.0.4:11883"/>
+     
+     <!-- Fast device search by last characters, here's the length -->
+     <Parameter name="device.fast.search.chars" value="5"/>
+     
+     <!-- Set to 1 if an external MQTT server must be used (ActiveMQ Classic is recommended) -->
+     <Parameter name="mqtt.external" value="true"/>
+     
+     <!-- Optional tag for the MQTT client (required if multiple Tomcat nodes are running) -->
+     <Parameter name="mqtt.client.tag" value="EDC-MDM"/>
+     
+     <!-- Optional tag for MQTT authentication for more security 
+          (supported by Headwind MDM launcher v5.05 and above) -->
+     <Parameter name="mqtt.auth" value="true"/>
+     <Parameter name="mqtt.ssl" value="false"/>
+     
+     <!-- Optional tag for delaying MQTT messages in milliseconds
+          to avoid congestion when all devices are updating configuration at the same time -->
+     <Parameter name="mqtt.message.delay" value="1000"/>
+     <Parameter name="mqtt.message.qos" value="2"/>
+     
+     <!-- Display X-Forwarded-For instead of source IP -->
+     <Parameter name="plugin.audit.display.forwarded.ip" value="${plugin.audit.display.forwarded.ip}"/>
+     
+     <!-- If you have any reverse proxies, specify them here (IP addresses, 
+          comma-separated) for correct logging of IP addresses -->
+     <!-- <Parameter name="proxy.addresses" value="192.168.1.101"/> -->
+     
+     <!-- Name of the HTTP header containing the device IP address.
+          Defaults to X-Real-IP -->
+     <!-- <Parameter name="proxy.ip.header" value="X-Forwarded-For"/> -->
+     
+     <!-- Email parameters are necessary for password recovery -->
+     <Parameter name="smtp.host" value="smtp.mailgun.org"/>
+     <Parameter name="smtp.port" value="25"/>
+     <Parameter name="smtp.ssl" value="0"/>
+     <Parameter name="smtp.starttls" value="0"/>
+     <Parameter name="smtp.username" value="myacct@example.com"/>
+     <Parameter name="smtp.password" value="skcbh252235as"/>
+     <Parameter name="smtp.from" value="noreply@example.com"/>
+     
+     <!-- Uncomment this line if you get 'Could not convert socket to TLS' -->
+     <!-- <Parameter name="smtp.ssl.protocols" value="TLSv1.2"/> -->
+     
+     <!-- If you need to run custom script uncomment this and add this value in build.properties file -->
+     <Parameter name="sql.init.script.path" value="/opt/base-mdm/server/init_script.sql"/>
+     
+     <!-- If you have any reverse proxies, specify them here (IP addresses,
+          comma-separated) for correct logging of IP addresses -->
+     <!-- <Parameter name="proxy.addresses" value="${proxy.addresses}"/> -->
+     
+     <!-- Name of the HTTP header containing the device IP address.
+          Defaults to X-Real-IP -->
+     <!-- <Parameter name="proxy.ip.header" value="${proxy.ip.header}"/> -->
+     <Parameter name="apk.trusted.url" value="/"/>
+     <Parameter name="rebranding.name" value="Base MDM" />
+     <Parameter name="rebranding.logo" value="/opt/base-mdm/server/logo.png" />
+     <Parameter name="rebranding.logoOnly" value="true" />
+     <Parameter name="rebranding.vendor.link" value="https://thebase.vn" />
+     <Parameter name="rebranding.vendor.name" value="The Base" />
+     <!-- <Parameter name="rebranding.signup.link" value="https://thebase.vn" /> -->
+     <Parameter name="rebranding.term.link" value="https://thebase.vn/terms" />
+     
+     
+     <!-- These are the customer email templates
+          Email paths may contain _LANGUAGE_ replaced to a two-letter language
+          The default language is en -->
+     <Parameter name="email.recovery.subj" value="_BASE_DIRECTORY_/emails/_LANGUAGE_/recovery_subj.txt"/>
+     <Parameter name="email.recovery.body" value="_BASE_DIRECTORY_/emails/_LANGUAGE_/recovery_body.txt"/>
+     
+     <!-- JWT parameters are allow you to customise secret and validity token -->
+     <!-- <Parameter name="jwt.secretkey" value="20c68f0d9185b1d18cf6add1e8b491fd89529a44"/> -->
+     <!-- <Parameter name="jwt.validity" value="86400"/> -->
+     <!-- <Parameter name="jwt.validityrememberme" value="2592000"/> -->
+</Context>

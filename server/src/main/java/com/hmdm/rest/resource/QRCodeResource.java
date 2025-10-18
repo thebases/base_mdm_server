@@ -128,6 +128,7 @@ public class QRCodeResource {
         logger.info("Generating JSON for configuration key: {}", id);
         try {
             Configuration configuration = this.unsecureDAO.getConfigurationByQRCodeKey(id);
+            logger.info("configuration:",configuration);
             if (configuration != null) {
                 String res = generateExtrasBundle(deviceID, createOnDemand, configuration, groups, useId, req.getContextPath());
                 return javax.ws.rs.core.Response.ok(res).build();
