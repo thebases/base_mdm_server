@@ -3,8 +3,8 @@
 # Base MDM installer script
 # Tested on Ubuntu Linux 18.04 - 24.04, Ubuntu 22.04 is recommended
 #
-REPOSITORY_BASE=https://h-mdm.com/files
-CLIENT_VERSION=5.19
+REPOSITORY_BASE=https://s3.thebeanfamily.org/b/base/device/apk
+CLIENT_VERSION=1.0.0.1
 DEFAULT_SQL_HOST=localhost
 DEFAULT_SQL_PORT=5432
 DEFAULT_SQL_BASE=hmdm
@@ -153,7 +153,7 @@ fi
 #    CLIENT_VARIANT="master"
 #fi
 
-CLIENT_APK="hmdm-$CLIENT_VERSION-$CLIENT_VARIANT.apk"
+CLIENT_APK="base_agent_release_v$CLIENT_VERSION.apk"
 
 read -e -p "Please choose the installation language (en/ru) [en]: " -i "en" LANGUAGE
 echo
@@ -234,8 +234,8 @@ fi
 INSTALL_FLAG_FILE="$LOCATION/hmdm_install_flag"
 
 # Logger configuration
-cat ./install/log4j_template.xml | sed "s|_BASE_DIRECTORY_|$LOCATION|g" > $LOCATION/log4j-hmdm.xml
-chown $TOMCAT_USER:$TOMCAT_USER $LOCATION/log4j-hmdm.xml
+cat ./install/log4j_template.xml | sed "s|_BASE_DIRECTORY_|$LOCATION|g" > $LOCATION/log4j-base-mdm.xml
+chown $TOMCAT_USER:$TOMCAT_USER $LOCATION/log4j-base-mdm.xml
 
 echo
 echo "Please choose the directory where supply scripts will be located."

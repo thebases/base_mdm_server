@@ -43,7 +43,7 @@ initialization.completion.signal.file=C:/Github/hmdm-server/server/base/initiali
 aapt.command=aapt
 
 # An URL for the file with configuration for loggers
-log4j.config=file:///C:/Github/hmdm-server/server/log4j-hmdm.xml
+log4j.config=file:///C:/Github/hmdm-server/server/log4j-base-mdm.xml
 log.file.main=C:/Github/hmdm-server/server/logs/hmdm.log
 log.file.audit=C:/Github/hmdm-server/server/logs/audit.log
 
