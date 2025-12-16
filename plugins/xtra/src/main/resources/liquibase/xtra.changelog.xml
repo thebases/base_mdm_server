@@ -43,7 +43,7 @@
             settingsPermission, functionsPermission, deviceFunctionsPermission
             )
             VALUES (
-            'xtra', 'More plugins...', 'Request for more plugins in the Premium version',
+            'xtra', 'More plugins...', 'Extra plugins',
             'app/components/plugins/xtra/xtra.module.js',
             'app/components/plugins/xtra/views/xtra.html',
             NULL,
@@ -61,7 +61,7 @@
     <changeSet id="plugin-xtra-13.05.2023-16:04" author="seva" context="common">
         <comment>Permission,new: plugin_xtra_access</comment>
         <sql>
-            INSERT INTO permissions (name, description) VALUES ('plugin_xtra_access', 'Access to Premium version request plugin');
+            INSERT INTO permissions (name, description) VALUES ('plugin_xtra_access', 'Access to Extra plugin');
             INSERT INTO userRolePermissions (roleId, permissionId) VALUES (1, currval('permissions_id_seq'));
             INSERT INTO userRolePermissions (roleId, permissionId) VALUES (2, currval('permissions_id_seq'));
             INSERT INTO userRolePermissions (roleId, permissionId) VALUES (3, currval('permissions_id_seq'));
