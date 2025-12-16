@@ -47,9 +47,9 @@
      <Parameter name="aapt.command" value="aapt"/>
      
      <!-- MQTT notification service parameters -->
-     <Parameter name="mqtt.server.uri" value="_BASE_DOMAIN_:_BASE_MQTT_PORT"/>
-     <Parameter name="mqtt.admin.username" value="_BASE_MQTT_USERNAME"/>
-     <Parameter name="mqtt.admin.password" value="_BASE_MQTT_PASSWORD"/>
+     <Parameter name="mqtt.server.uri" value="_BASE_DOMAIN_:_BASE_MQTT_PORT_"/>
+     <Parameter name="mqtt.admin.username" value="_BASE_MQTT_USERNAME_"/>
+     <Parameter name="mqtt.admin.password" value="_BASE_MQTT_PASSWORD_"/>
      
      <!-- Optional tag for delaying MQTT messages in milliseconds
           to avoid congestion when all devices are updating configuration at the same time -->
@@ -109,4 +109,15 @@
      <!-- <Parameter name="jwt.secretkey" value="20c68f0d9185b1d18cf6add1e8b491fd89529a44"/> -->
      <!-- <Parameter name="jwt.validity" value="86400"/> -->
      <!-- <Parameter name="jwt.validityrememberme" value="2592000"/> -->
+     
+     <!-- Rebranding  -->
+     <Parameter name="rebranding.name" value="Base MDM" />
+     <Parameter name="rebranding.logo" value="/opt/base-mdm/server/logo_bean.png" />
+     <!-- <Parameter name="rebranding.logo" value="/opt/base-mdm/server/logo.png" /> -->
+     <Parameter name="rebranding.logoOnly" value="true" />
+     <Parameter name="rebranding.vendor.link" value="https://thebeanfamliy.org" />
+     <Parameter name="rebranding.vendor.name" value="The Bean Family" />
+     <!-- <Parameter name="rebranding.signup.link" value="https://thebeanfamliy.org" /> -->
+     <Parameter name="rebranding.term.link" value="https://thebeanfamily.org/terms" />
+
 </Context>
