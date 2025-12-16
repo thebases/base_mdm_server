@@ -10,7 +10,7 @@
     </appender>
 
     <appender name="main-log-file" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="file" value="_BASE_DIRECTORY_/logs/hmdm.log"/>
+        <param name="file" value="_BASE_DIRECTORY_/logs/bmdm.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss,SSS} %-5p  %m%n"/>
         </layout>

@@ -1,17 +1,17 @@
 # This is a sample file; copy this file to build.properties
 
 # database settings
-jdbc.url=jdbc:postgresql://localhost:5432/hmdm?sslmode=disable
+jdbc.url=jdbc:postgresql://localhost:5432/bmdm?sslmode=disable
 jdbc.driver=org.postgresql.Driver
 jdbc.username=anhjean
 jdbc.password=Anhnh7383@
-sql.init.script.path=C:/Github/hmdm-server/server/init_script.sql
+sql.init.script.path=C:/Github/base_mdm_server/server/init_script.sql
 
 # A path to a base app directory to store internal data
-base.directory=C:/Github/hmdm-server/server
+base.directory=C:/Github/base_mdm_server/server
 
 # A path to a directory to store uploaded files
-files.directory=C:/Github/hmdm-server/server/base/files
+files.directory=C:/Github/base_mdm_server/server/base/files
 
 # A base URL for deployment of this build
 base.url=http://localhost:9090
@@ -34,32 +34,32 @@ hash.secret=changeme-C3z9vi54
 role.orgadmin.id=2
 
 # A path to a root directory for storing plugin files
-plugins.files.directory=C:/Github/hmdm-server/server/base/plugins
+plugins.files.directory=C:/Github/base_mdm_server/server/base/plugins
 
 # A path to a file to be created by the application initializer to signal on initialization completion
-initialization.completion.signal.file=C:/Github/hmdm-server/server/base/initialized.txt
+initialization.completion.signal.file=C:/Github/base_mdm_server/server/base/initialized.txt
 
 # A command for calling the aapt
 aapt.command=aapt
 
 # An URL for the file with configuration for loggers
-log4j.config=file:///C:/Github/hmdm-server/server/log4j-base-mdm.xml
-log.file.main=C:/Github/hmdm-server/server/logs/hmdm.log
-log.file.audit=C:/Github/hmdm-server/server/logs/audit.log
+log4j.config=file:///C:/Github/base_mdm_server/server/log4j-base-mdm.xml
+log.file.main=C:/Github/base_mdm_server/server/logs/bmdm.log
+log.file.audit=C:/Github/base_mdm_server/server/logs/audit.log
 
 # The parameters specific to Device Log plugin
 plugin.devicelog.persistence.config.class=com.hmdm.plugins.devicelog.persistence.postgres.DeviceLogPostgresPersistenceConfiguration
 
 # MQTT notification server local URI
-#mqtt.server.uri=localhost:31000
 mqtt.external=true
-#mqtt.server.uri=mqtt.thebase.vn:1883
-#mqtt.admin.username=thebase
-#mqtt.admin.password=12345678
+#mqtt.server.uri=<MQTT_DOMAIN>:<PORT>
+#mqtt.admin.username=<USERNAME>
+#mqtt.admin.password=<PASSWORD>
+#mqtt.client.tag=<CLIEN-TAG>
 mqtt.server.uri=ipn.beanbakery.vn:18883
-mqtt.admin.username=atom
+mqtt.admin.username=basemdm
 mqtt.admin.password=12345678
-mqtt.client.tag=ATOM-MDM
+mqtt.client.tag=BASE-MDM
 
 
 # MQTT authentication for more security (supported by Base MDM launcher v5.05 and above)

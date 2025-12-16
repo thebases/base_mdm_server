@@ -1,4 +1,4 @@
-Base MDM: a corporate launcher for Android
+Base MDM for Android
 ==============================================
 =   INSTALL INSTRUCTIONS FOR THE WEB PANEL   =
 ==============================================
@@ -22,13 +22,13 @@ Escape character is '^]'.
 
 # sudo su postgres
 # psql
-postgres=# CREATE USER hmdm WITH PASSWORD 'topsecret';
-postgres=# CREATE DATABASE hmdm WITH OWNER=hmdm;
+postgres=# CREATE USER bmdm WITH PASSWORD 'topsecret';
+postgres=# CREATE DATABASE bmdm WITH OWNER=bmdm;
 postgres=# \q
 
 4. Run the installer script (as root)
 
-sudo ./hmdm_install.sh
+sudo ./bmdm_install.sh
 
 5. On success, the installer script provides you with the URL. Open Base MDM in browser.
 

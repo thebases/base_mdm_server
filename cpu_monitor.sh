@@ -4,10 +4,10 @@
 #
 MAILS="info@example.com"
 TMP_BODY="/tmp/error_mail.txt"
-ERROR_FLAG_FILE="/tmp/hmdm.error_flag"
-ERROR_LOG_FILE="/opt/hmdm/cpu_error.log"
+ERROR_FLAG_FILE="/tmp/bmdm.error_flag"
+ERROR_LOG_FILE="/opt/bmdm/cpu_error.log"
 CRITICAL_CPU_USAGE=200
-LAST_RESTART_FILE="/tmp/hmdm.last_restart"
+LAST_RESTART_FILE="/tmp/bmdm.last_restart"
 FIX_SCRIPT="/usr/sbin/service tomcat9 restart"
 
 BC_PATH=$(which bc)

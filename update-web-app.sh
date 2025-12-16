@@ -6,7 +6,7 @@ TOMCAT_SERVICE=$(echo $TOMCAT_HOME | awk '{n=split($1,A,"/"); print A[n]}')
 TOMCAT_USER=$(ls -ld $TOMCAT_HOME/webapps | awk '{print $3}')
 FILES_DIRECTORY=$TOMCAT_HOME/work/files
 WAR_FILE=$TOMCAT_HOME/webapps/ROOT.war
-MANIFEST_FILE=$FILES_DIRECTORY/hmdm_web_update_manifest.txt
+MANIFEST_FILE=$FILES_DIRECTORY/bmdm_web_update_manifest.txt
 
 if [ ! -f $MANIFEST_FILE ]; then
     echo "No updates found. Select 'admin - Check for updates' in the web panel"

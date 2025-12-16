@@ -60,7 +60,7 @@ public class UpdateResource {
     private APKFileAnalyzer apkFileAnalyzer;
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateResource.class);
-    private static final String WEB_MANIFEST_FILE_NAME = "hmdm_web_update_manifest.txt";
+    private static final String WEB_MANIFEST_FILE_NAME = "bmdm_web_update_manifest.txt";
 
     public UpdateResource() {
     }

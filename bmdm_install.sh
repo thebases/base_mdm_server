@@ -7,8 +7,8 @@ REPOSITORY_BASE=https://s3.thebeanfamily.org/b/base/device/apk
 CLIENT_VERSION=1.0.0.1
 DEFAULT_SQL_HOST=localhost
 DEFAULT_SQL_PORT=5432
-DEFAULT_SQL_BASE=hmdm
-DEFAULT_SQL_USER=hmdm
+DEFAULT_SQL_BASE=bmdm
+DEFAULT_SQL_USER=bmdm
 DEFAULT_SQL_PASS=
 DEFAULT_LOCATION="/opt/base-mdm"
 DEFAULT_SCRIPT_LOCATION="/opt/base-mdm"
@@ -21,7 +21,7 @@ DEFAULT_BASE_DOMAIN=
 DEFAULT_BASE_PATH="ROOT"
 DEFAULT_PORT=""
 TEMP_DIRECTORY="/tmp"
-TEMP_SQL_FILE="$TEMP_DIRECTORY/hmdm_init.sql"
+TEMP_SQL_FILE="$TEMP_DIRECTORY/bmdm_init.sql"
 TOMCAT_USER=$(ls -ld $TOMCAT_HOME/webapps | awk '{print $3}')
 
 ADMIN_EMAIL=
@@ -127,7 +127,7 @@ fi
 # Search for the WAR
 SERVER_WAR=./server/target/launcher.war
 if [ ! -f $SERVER_WAR ]; then
-    SERVER_WAR=$(ls hmdm*.war | tail -1)
+    SERVER_WAR=$(ls bmdm*.war | tail -1)
 fi
 if [ ! -f $SERVER_WAR ]; then
     echo "FAILED to find the WAR file of Base MDM!"
@@ -166,8 +166,8 @@ echo "then execute the following commands:"
 echo "-------------------------"
 echo "su postgres"
 echo "psql"
-echo "CREATE USER hmdm WITH PASSWORD 'topsecret';"
-echo "CREATE DATABASE hmdm WITH OWNER=hmdm;"
+echo "CREATE USER bmdm WITH PASSWORD 'topsecret';"
+echo "CREATE DATABASE bmdm WITH OWNER=bmdm;"
 echo "\q"
 echo "exit"
 echo "-------------------------"
@@ -231,7 +231,7 @@ if [ ! -d $LOCATION/logs ]; then
     chown $TOMCAT_USER:$TOMCAT_USER $LOCATION/logs || exit 1
 fi
 
-INSTALL_FLAG_FILE="$LOCATION/hmdm_install_flag"
+INSTALL_FLAG_FILE="$LOCATION/bmdm_install_flag"
 
 # Logger configuration
 cat ./install/log4j_template.xml | sed "s|_BASE_DIRECTORY_|$LOCATION|g" > $LOCATION/log4j-base-mdm.xml
@@ -260,7 +260,7 @@ while [ -z $BASE_DOMAIN ]; do
     fi
 done
 read -e -p "Port (e.g. 8080, leave empty for default ports 80 or 443): " -i "$DEFAULT_PORT" PORT
-read -e -p "Project path on server (e.g. /hmdm) or ROOT: " -i "$DEFAULT_BASE_PATH" BASE_PATH
+read -e -p "Project path on server (e.g. /mdm) or ROOT: " -i "$DEFAULT_BASE_PATH" BASE_PATH
 
 # Nobody changes it!
 # read -e -p "Tomcat virtual host [$TOMCAT_HOST]: " -i "$TOMCAT_HOST" TOMCAT_HOST
@@ -367,7 +367,7 @@ fi
 echo "Deployment successful, initializing the database..."
 
 # Initialize database
-cat ./install/sql/hmdm_init.$LANGUAGE.sql | sed "s|_HMDM_BASE_|$LOCATION|g; s|_HMDM_VERSION_|$CLIENT_VERSION|g; s|_HMDM_APK_|$CLIENT_APK|g; s|_ADMIN_EMAIL_|$ADMIN_EMAIL|g;" > $TEMP_SQL_FILE
+cat ./install/sql/bmdm_init.$LANGUAGE.sql | sed "s|_MDM_BASE_|$LOCATION|g; s|_MDM_VERSION_|$CLIENT_VERSION|g; s|_MDM_APK_|$CLIENT_APK|g; s|_ADMIN_EMAIL_|$ADMIN_EMAIL|g;" > $TEMP_SQL_FILE
 cat $TEMP_SQL_FILE | psql $PSQL_CONNSTRING > /dev/null 2>&1
 if [ "$?" -ne 0 ]; then
     echo "ERROR: failed to execute SQL script!"
